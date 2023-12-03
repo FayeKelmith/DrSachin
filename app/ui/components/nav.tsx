@@ -3,9 +3,9 @@ import Link from "next/link";
 import { MoonIcon, SunIcon } from "@heroicons/react/24/outline";
 const Navigation = () => {
   return (
-    <nav className="w-full py-4 backdrop-blur-md">
+    <nav className="bg-white text-black dark:bg-slate-800 dark:text-white ">
       <Sidhra />
-      <ul>
+      <ul className="flex w-full">
         <li>
           <Link href="/articles"> articles</Link>
         </li>
