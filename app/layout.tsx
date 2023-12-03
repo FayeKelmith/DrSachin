@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./ui/globals.css";
 import Navigation from "@/app/ui/components/nav";
+import { Provider } from "./providers";
 const lato = Lato({
   subsets: ["latin"],
   weight: ["100", "300", "400", "700", "900"],
@@ -20,12 +21,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className={lato.className}>
-        <nav>
-          <Navigation />
-        </nav>
-        <main>{children}</main>
+        <Provider>
+          <nav>
+            <Navigation />
+          </nav>
+          <main>{children}</main>
+        </Provider>
       </body>
     </html>
   );
