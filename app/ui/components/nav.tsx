@@ -10,6 +10,8 @@ import {
 import { useTheme } from "next-themes";
 import { useState } from "react";
 
+const navItemStyling =
+  "block my-auto mx-4 px-2 py-2 link-underline link-underline-black ";
 const Navigation = () => {
   const { theme, setTheme } = useTheme();
   const [isNavOpen, setIsNavOpen] = useState(false);
@@ -23,14 +25,16 @@ const Navigation = () => {
   console.log(`Theme : ${theme}`);
   return (
     <nav className="bg-white text-black dark:bg-slate-800 dark:text-white ">
-      <div className="flex max-w-screen-xl justify-between items-center flex-wrap mx-auto p-4">
-        <Sidhra />
+      <div className="flex max-w-screen-xl justify-between items-center flex-wrap mx-auto">
+        <Link href="/">
+          <Sidhra />
+        </Link>
         <button
           className="md:hidden inline-flex hover:bg-gray-100 dark:hover:bg-slate-700 rounded-md focus:outline-none"
           onClick={toggleNav}
         >
           {/* Mobile view Nav */}
-          <span className="">
+          <span className="mx-4">
             {isNavOpen ? (
               <XMarkIcon className="w-10 h-10" />
             ) : (
@@ -45,28 +49,25 @@ const Navigation = () => {
             isNavOpen ? "block" : "hidden"
           }`}
         >
-          <ul className="flex flex-col md:flex-row">
-            <li>
-              <Link href="/articles"> articles</Link>
+          <ul className="flex flex-col md:flex-row text-xl">
+            <li className={navItemStyling}>
+              <Link href="/articles"> Articles</Link>
             </li>
-            <li>
+            <li className={navItemStyling}>
               <Link href="/record"> Achievements</Link>
             </li>
-            <li>
+            <li className={navItemStyling}>
               <Link href="/about"> About Me</Link>
             </li>
-            <li>
-              <button
-                className=" hover:caret-pink-500"
-                onClick={() => handleTheme()}
-              >
+            <li className="mx-4 py-2 px-2">
+              <button className="" onClick={() => handleTheme()}>
                 {theme === "light" ? (
                   <div>
-                    <MoonIcon className="w-8 h-8 text-slate-800" />
+                    <MoonIcon className="w-8 h-8 text-slate-800 hover:text-[#19a7ce]" />
                   </div>
                 ) : (
                   <div>
-                    <SunIcon className="w-8 h-8 text-blank" />
+                    <SunIcon className="w-8 h-8 text-blank hover:text-[#19a7ce]" />
                   </div>
                 )}
               </button>
