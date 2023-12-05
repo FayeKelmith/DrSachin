@@ -24,7 +24,7 @@ const Navigation = () => {
   };
 
   return (
-    <nav className="bg-white text-black dark:bg-slate-800 dark:text-white sticky backdrop-blur-md bg-transparent z-20">
+    <nav className=" text-black  dark:text-white fixed w-full top-0 backdrop-blur-sm dark:font-semibold bg-transparent z-20">
       <div className="flex min-w-screen-xl justify-between items-center flex-wrap mx-auto">
         <Link className="justify-start" href="/">
           <Sidhra />
