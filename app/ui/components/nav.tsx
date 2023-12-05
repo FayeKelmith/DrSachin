@@ -24,13 +24,18 @@ const Navigation = () => {
   };
 
   return (
-    <nav className=" text-black  dark:text-white fixed w-full top-0 backdrop-blur-sm dark:font-semibold bg-transparent z-20">
-      <div className="flex min-w-screen-xl justify-between items-center flex-wrap mx-auto">
-        <Link className="justify-start" href="/">
+    <nav
+      className={` text-black  dark:text-white fixed w-full md:h-auto top-0 backdrop-blur-sm font-semibold bg-transparent z-20 ${
+        isNavOpen ? "h-screen" : ""
+      }`}
+    >
+      <div className="grid grid-cols-2 w-full gap-x-40 items-center ">
+        <Link className="" href="/">
           <Sidhra />
         </Link>
+
         <button
-          className="md:hidden inline-flex hover:bg-gray-100 dark:hover:bg-slate-700 rounded-md focus:outline-none"
+          className="md:hidden block hover:bg-gray-100 w-fit px-0 dark:hover:bg-slate-700 rounded-md"
           onClick={toggleNav}
         >
           {/* Mobile view Nav */}
@@ -42,7 +47,6 @@ const Navigation = () => {
             )}
           </span>
         </button>
-
         {/* Desktop view Nav */}
         <div
           className={`md:block justify-center md:w-auto ${
