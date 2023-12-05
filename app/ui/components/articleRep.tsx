@@ -2,8 +2,8 @@
 import Image from "next/image";
 const ArticleRep = () => {
   return (
-    <div className="flex sm:flex-row flex-col mx-auto md:max-w-5xl justify-between p-4 shadow-2xl dark:bg-[#1a1a1a] md:bg-blank rounded-md dark:shadow-slate-800">
-      <div className="containerrelative w-80 h-80 mx-auto  md:max-w-sm brightness-75 md:brightness-100">
+    <div className="flex-col my-10 flex md:flex-row mx-auto md:max-w-5xl justify-between p-4 shadow-2xl dark:bg-[#1a1a1a] md:bg-grey rounded-md dark:shadow-slate-800 hover:outline hover:outline-[#19A7CE] hover:outline-1">
+      <div className="container  w-72 h-72 mx-auto md:w-80 md:h-80 brightness-75 md:brightness-100">
         {/* Image for doc */}
         <Image
           src="/images/mic.jpg"
@@ -11,12 +11,12 @@ const ArticleRep = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
-          className="rounded-lg"
+          className="rounded-sm"
         />
       </div>
-      <div className="sm:block md:max-w-2xl p-2 mx-4">
+      <div className=" md:max-w-2xl mx-4">
         {/* Description */}
-        <h3 className="text-4xl font-bold py-2">
+        <h3 className="text-2xl md:text-4xl font-medium p-4">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
           molestias?
         </h3>

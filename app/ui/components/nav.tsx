@@ -30,16 +30,16 @@ const Navigation = () => {
       }`}
     >
       <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center auto-cols-min">
-        <Link className="hover:bg-blue-200" href="/">
+        <Link className="mx-4" href="/">
           <Sidhra />
         </Link>
 
         <button
-          className="md:hidden block hover:bg-gray-100 justify-self-end mx-4 place-items-center dark:hover:bg-slate-700 rounded-md"
+          className="md:hidden block justify-self-end mx-8 place-items-center dark:hover:bg-slate-700 rounded-md"
           onClick={toggleNav}
         >
           {/* Mobile view Nav */}
-          <span className="mx-4">
+          <span className="">
             {isNavOpen ? (
               <XMarkIcon className="w-10 h-10" />
             ) : (
