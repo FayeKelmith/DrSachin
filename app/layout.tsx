@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={lato.className}>
         <Provider>
-          <nav>
+          <nav className="z-20">
             <Navigation />
           </nav>
           <main>{children}</main>

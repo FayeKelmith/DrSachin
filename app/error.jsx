@@ -3,7 +3,7 @@ const Error = () => {
   return (
     <div>
       <p>Sorry something went wrong.</p>
-      <p>Please reset</p>
+      <p>Please refresh</p>
     </div>
   );
 };
