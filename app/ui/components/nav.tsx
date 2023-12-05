@@ -29,13 +29,13 @@ const Navigation = () => {
         isNavOpen ? "h-screen" : ""
       }`}
     >
-      <div className="grid grid-cols-2 w-full gap-x-40 items-center ">
-        <Link className="" href="/">
+      <div className="grid grid-cols-2 md:grid-cols-3 items-center justify-center auto-cols-min">
+        <Link className="hover:bg-blue-200" href="/">
           <Sidhra />
         </Link>
 
         <button
-          className="md:hidden block hover:bg-gray-100 w-fit px-0 dark:hover:bg-slate-700 rounded-md"
+          className="md:hidden block hover:bg-gray-100 justify-self-end mx-4 place-items-center dark:hover:bg-slate-700 rounded-md"
           onClick={toggleNav}
         >
           {/* Mobile view Nav */}
@@ -49,7 +49,7 @@ const Navigation = () => {
         </button>
         {/* Desktop view Nav */}
         <div
-          className={`md:block justify-center md:w-auto ${
+          className={`md:block justify-self-end md:col-span-2  md:w-auto mx-4 ${
             isNavOpen ? "block" : "hidden"
           }`}
         >
