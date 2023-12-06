@@ -1,4 +1,5 @@
 //TODO: To generate an animation that depicts loading when in need of API access or network issues for what ever reason.
+"use client";
 import Lottie from "lottie-react";
 import animationData from "@/public/animations/loading.json";
 const Loading = () => {
