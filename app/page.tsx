@@ -8,7 +8,7 @@ export default function Home() {
       <div className="flex md:flex-row flex-col pt-20 items-center ">
         <div className="w-full m-10 ">
           <div className="">
-            <p className="text-4xl h-20 w-20">
+            <p className="text-5xl h-20 w-20 text-[#EB455F] font-semibold">
               Hola!{" "}
               <span className="">
                 <Lottie animationData={animationData} loop={true} />
