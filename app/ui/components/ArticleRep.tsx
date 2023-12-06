@@ -20,7 +20,7 @@ const ArticleRep = () => {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id,
           molestias?
         </h3>
-        <p className=" hidden md:block text-lg dark:bg-[#232323] p-4 bg-white rounded-sm">
+        <p className=" hidden md:block text-lg dark:bg-[#232323] py-4 px-6 bg-blue-50 rounded-md ">
           Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aperiam
           optio quas, qui aspernatur, possimus quisquam, ab laboriosam cum
           laudantium ducimus iste neque numquam? Cupiditate provident iure
