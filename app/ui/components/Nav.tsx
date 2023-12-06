@@ -25,7 +25,7 @@ const Navigation = () => {
 
   return (
     <nav
-      className={` text-black  dark:text-white fixed w-full md:h-auto top-0 backdrop-blur-sm font-semibold bg-transparent z-20 ${
+      className={` text-black  dark:text-white  md:h-auto backdrop-blur-sm font-semibold bg-transparent ${
         isNavOpen ? "h-screen" : ""
       }`}
     >

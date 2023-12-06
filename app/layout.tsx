@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
 import "./ui/globals.css";
-import Navigation from "@/app/ui/components/nav";
+import Navigation from "@/app/ui/components/Nav";
 import { Provider } from "./providers";
 const lato = Lato({
   subsets: ["latin"],
@@ -24,10 +24,10 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body className={lato.className}>
         <Provider>
-          <nav className="z-20">
+          <nav className="top-0 fixed w-full z-20">
             <Navigation />
           </nav>
-          <main>{children}</main>
+          <div className="w-full h-auto">{children}</div>
         </Provider>
       </body>
     </html>
