@@ -5,22 +5,20 @@ import animationData from "@/public/animations/wave.json";
 const LandingHero = () => {
   return (
     <>
-      <div className="flex md:flex-row flex-col pt-20 items-center ">
-        <div className="w-full m-10 ">
+      <div className="flex md:flex-row flex-col py-20 px-8 items-center md:container mx-auto">
+        <div className="w-full my-10 ">
           <div className="">
             <p className="text-5xl h-20 w-20 text-[#EB455F] font-semibold">
-              Hola!{" "}
-              <span className="">
-                <Lottie animationData={animationData} loop={true} />
-              </span>
+              Hola!
+              <Lottie animationData={animationData} loop={true} />
             </p>
           </div>
-          <h1 className="text-2xl my-8 mx-4">
+          <h1 className="text-4xl my-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
             dicta!
           </h1>
 
-          <p className="hidden md:block m-10 text-lg">
+          <p className="hidden md:block mx-10 text-xl">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum eius in
             nesciunt quos cupiditate inventore quaerat odio dolorem similique
             mollitia illum blanditiis voluptatibus consectetur libero vitae
@@ -30,13 +28,14 @@ const LandingHero = () => {
           </p>
         </div>
 
-        <div></div>
-        <Image
-          src="/images/hero-image.png"
-          alt="Hero image"
-          width={640}
-          height={768}
-        />
+        <div className="lg:ml-20">
+          <Image
+            src="/images/hero-image.png"
+            alt="Hero image"
+            width={640}
+            height={768}
+          />
+        </div>
       </div>
     </>
   );

@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { Lato } from "next/font/google";
+import { lato } from "./ui/fonts";
 import "./ui/globals.css";
 import Navigation from "@/app/ui/components/Nav";
 import { Provider } from "./providers";
-const lato = Lato({
-  subsets: ["latin"],
-  weight: ["100", "300", "400", "700", "900"],
-});
 
 export const metadata: Metadata = {
   title: "Home | Sidhra",
@@ -27,7 +23,7 @@ export default function RootLayout({
           <nav className="top-0 fixed w-full z-20">
             <Navigation />
           </nav>
-          <div className="w-full h-auto">{children}</div>
+          <main className="w-full mx-0 h-auto">{children}</main>
         </Provider>
       </body>
     </html>
