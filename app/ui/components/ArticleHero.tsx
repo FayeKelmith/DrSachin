@@ -8,7 +8,7 @@ const ArticleHero = () => {
       <div className="md:min-w-96 justify-center ">
         <Lottie animationData={animationData} loop={true} />
       </div>
-      <div className="md:text-5xl md:w-[36rem] text-3xl text-center my-auto py-10 ">
+      <div className="md:text-5xl md:w-[36rem] text-3xl px-2 my-auto py-10 ">
         <p className="inline">Here is what I </p>
         <TypeAnimation
           sequence={[
@@ -23,7 +23,7 @@ const ArticleHero = () => {
             2000,
           ]}
           wrapper="span"
-          speed={80}
+          speed={90}
           style={{
             display: "inline",
             color: "#EB455F",
