@@ -11,7 +11,7 @@ const ArticleRep = () => {
           layout="fill"
           objectFit="cover"
           objectPosition="center"
-          className="rounded-sm"
+          className="rounded-md"
         />
       </div>
       <div className=" md:max-w-2xl mx-4">
@@ -25,8 +25,10 @@ const ArticleRep = () => {
           optio quas, qui aspernatur, possimus quisquam, ab laboriosam cum
           laudantium ducimus iste neque numquam? Cupiditate provident iure
           consequuntur repellendus voluptas deserunt unde ratione fugiat debitis
-          illum earum perferendis, dolores autem soluta pariatur quos mollitia
-          quas eum dicta. Vitae velit tempore id.
+          illum earum perferendis,
+        </p>
+        <p className="text-right italic py-2 text-slate-500 dark:text-slate-300">
+          25th Dec. 2023
         </p>
       </div>
     </div>
