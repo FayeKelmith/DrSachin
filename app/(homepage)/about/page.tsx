@@ -5,10 +5,10 @@ import Lottie from "lottie-react";
 import { TypeAnimation } from "react-type-animation";
 const About = () => {
   return (
-    <div className="pt-20 flex flex-col md:flex-row container mx-auto justify-between  px-4">
-      <div className=" md:mx-10">
+    <div className="pt-20 grid grid-cols-1 md:grid-cols-3 container mx-auto md:justify-between px-2">
+      <div className=" md:mx-10 md:col-span-2">
         {/* Text content */}
-        <div className="w-36 mx-auto md:mx-0">
+        <div className="w-36">
           <Lottie animationData={animationData} loop={true} />
         </div>
         <p className="text-5xl py-4">
@@ -40,7 +40,7 @@ const About = () => {
           />
         </p>
         <h1 className="text-5xl py-4"> I&apos;m Dr. Sachin Sidhra</h1>
-        <p className="p-8 text-2xl">
+        <p className=" p-4 md:p-8 text-2xl">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Est sed
           quibusdam non at fugit reiciendis deserunt magni, necessitatibus odio
           soluta dolorem similique autem nesciunt tempora repudiandae ipsam
@@ -56,7 +56,7 @@ const About = () => {
           perspiciatis. Sunt doloribus blanditiis expedita error!
         </p>
       </div>
-      <div className="relative w-full h-[60vh] my-10 ">
+      <div className="relative text-center sm:w-96 h-[60vh] my-10 ">
         {/* Image */}
         <Image
           src="/images/suited.jpg"

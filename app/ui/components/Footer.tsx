@@ -11,7 +11,7 @@ const Footer = () => {
     "inline-block p-3 rounded-full mx-auto hover:bg-[#EB455F]";
   const iconStyles = { fontSize: "2rem" };
   return (
-    <div className="w-full">
+    <div className="">
       <div className="grid grid-cols-4 gap-2 w-full sm:w-96 mx-auto py-4">
         <Link href="/" className={circleClasses}>
           <FaFacebook style={iconStyles} />
@@ -33,7 +33,7 @@ const Footer = () => {
       <div className="text-center">
         {/* copyright */}
         <p className="text-lg py-4">
-          Designed & Developed by Karizmatik ©2024 🕊{" "}
+          Designed & Developed by Karizmatik ©2024 🕊
         </p>
       </div>
     </div>

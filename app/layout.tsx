@@ -23,7 +23,7 @@ export default function RootLayout({
           <nav className="top-0 fixed w-full z-20">
             <Navigation />
           </nav>
-          <main className="w-full mx-0 h-auto">{children}</main>
+          <main className="mx-0 h-auto">{children}</main>
           <footer>
             <Footer />
           </footer>
