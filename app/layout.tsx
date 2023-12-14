@@ -3,7 +3,7 @@ import { lato } from "./ui/fonts";
 import "./ui/globals.css";
 import Navigation from "@/app/ui/components/Nav";
 import { Provider } from "./providers";
-
+import Footer from "@/app/ui/components/Footer";
 export const metadata: Metadata = {
   title: "Home | Sidhra",
   description: "Professional personal website for Dr. Sachin Sidhra.",
@@ -24,6 +24,9 @@ export default function RootLayout({
             <Navigation />
           </nav>
           <main className="w-full mx-0 h-auto">{children}</main>
+          <footer>
+            <Footer />
+          </footer>
         </Provider>
       </body>
     </html>
