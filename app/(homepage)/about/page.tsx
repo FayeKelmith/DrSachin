@@ -4,16 +4,28 @@ import animationData from "@/public/animations/namaste.json";
 import Lottie from "lottie-react";
 import { TypeAnimation } from "react-type-animation";
 import { useState } from "react";
-import { sendMessage } from "@/app/api/database/route";
+//import { sendMessage } from "@/app/api/database/route";
+import supabase from "@/supabase";
+
 const About = () => {
   const [message, setMessage] = useState("");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    sendMessage();
-  };
 
+  const sendMessage = async () => {
+    console.log("Sending message");
+    try {
+      const { error } = await supabase
+        .from("messages")
+        .insert([{ name: "test", message: "test", contact: 1234567890 }]);
+
+      console.log(error);
+      return error;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
+  };
   return (
     <div>
       <div className="pt-20 grid grid-cols-1 md:grid-cols-3 container mx-auto md:justify-between px-2">
@@ -72,10 +84,11 @@ const About = () => {
           <Image
             src="/images/suited.jpg"
             alt="Suited man"
-            layout="fill"
-            objectFit="cover"
-            objectPosition="center"
-            className="rounded-xl dark:hover:shadow-red-100 shadow-lg hover:shadow-slate-400"
+            width={640}
+            height={768}
+            priority={true}
+            // layout="fill"
+            className="rounded-xl dark:hover:shadow-red-100 shadow-lg hover:shadow-slate-400 object-cover object-center"
           />
         </div>
       </div>
@@ -121,12 +134,13 @@ const About = () => {
               rows={10}
               cols={50}
               placeholder="Message"
-              className="p-4 w-full focus:outline focus:outline-[#EB455F] rounded-md"
+              className="p-4 w-full focus:outline focus:outline-[#EB455F] rounded-md "
             ></textarea>
           </div>
           <button
             type="submit"
-            className=" px-10 py-2 border border-[#EB455F] text-2xl hover:bg-[#EB455F] font-semibold hover:text-white justify-self-end"
+            className=" px-10 py-2 mx-4 border border-[#EB455F] text-2xl hover:bg-[#EB455F] font-semibold hover:text-white justify-self-end"
+            onClick={() => sendMessage()}
           >
             Send
           </button>

@@ -2,6 +2,7 @@
 import supabase from "@/supabase";
 
 export const sendMessage = async () => {
+  console.log("Sending message");
   try {
     const { error } = await supabase
       .from("messages")
