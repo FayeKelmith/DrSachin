@@ -3,12 +3,15 @@ import Image from "next/image";
 import animationData from "@/public/animations/namaste.json";
 import Lottie from "lottie-react";
 import { TypeAnimation } from "react-type-animation";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 const About = () => {
+  const router = useRouter();
+  const [submitting, setSubmitting] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-
+    setSubmitting(true);
     //pulling name, contact, message from form and storing in formData
     const form = new FormData(e.target as HTMLFormElement);
 
@@ -17,7 +20,6 @@ const About = () => {
     Array.from(form.entries()).forEach(([key, value]) => {
       formData[key] = value;
     });
-
     //sending formData to server
     try {
       const response = await fetch("/api/contact", {
@@ -26,14 +28,15 @@ const About = () => {
       });
 
       if (response.ok) {
-        console.log("success");
-        //display success message
-        // router.push("/");
+        //console.log("success");
+        router.push("/");
       } else {
         console.log("error " + response.status);
       }
     } catch (err) {
       console.log(err);
+    } finally {
+      setSubmitting(false);
     }
   };
   return (
@@ -128,7 +131,8 @@ const About = () => {
               type="text"
               name="contact"
               className="py-2 px-4 focus:outline focus:outline-[#EB455F] rounded-md"
-              placeholder="optional"
+              placeholder="How can I reach you?"
+              required
             />
           </div>
 
@@ -147,6 +151,7 @@ const About = () => {
           <button
             type="submit"
             className=" px-10 py-2 mx-4 border border-[#EB455F] text-2xl hover:bg-[#EB455F] font-semibold hover:text-white justify-self-end"
+            disabled={submitting}
           >
             Send
           </button>
