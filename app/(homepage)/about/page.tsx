@@ -3,27 +3,37 @@ import Image from "next/image";
 import animationData from "@/public/animations/namaste.json";
 import Lottie from "lottie-react";
 import { TypeAnimation } from "react-type-animation";
-import { useState } from "react";
-//import { sendMessage } from "@/app/api/database/route";
-import supabase from "@/supabase";
+import { useRouter } from "next/router";
 
 const About = () => {
-  const [message, setMessage] = useState("");
-  const [name, setName] = useState("");
-  const [contact, setContact] = useState("");
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
 
-  const sendMessage = async () => {
-    console.log("Sending message");
+    //pulling name, contact, message from form and storing in formData
+    const form = new FormData(e.target as HTMLFormElement);
+
+    const formData: { [key: string]: FormDataEntryValue } = {};
+
+    Array.from(form.entries()).forEach(([key, value]) => {
+      formData[key] = value;
+    });
+
+    //sending formData to server
     try {
-      const { error } = await supabase
-        .from("messages")
-        .insert([{ name: "test", message: "test", contact: 1234567890 }]);
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
 
-      console.log(error);
-      return error;
-    } catch (error) {
-      console.log(error);
-      return error;
+      if (response.ok) {
+        console.log("success");
+        //display success message
+        // router.push("/");
+      } else {
+        console.log("error " + response.status);
+      }
+    } catch (err) {
+      console.log(err);
     }
   };
   return (
@@ -93,7 +103,10 @@ const About = () => {
         </div>
       </div>
       <div className="container mx-auto text-xl my-12">
-        <form action="" className="grid justify-items-start gap-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="grid justify-items-start gap-y-6"
+        >
           <div>
             <label htmlFor="name" className="mx-4">
               Name
@@ -101,9 +114,7 @@ const About = () => {
             <input
               type="text"
               name="name"
-              value={name}
               className="py-2 px-4 ml-4 focus:outline focus:outline-[#EB455F] rounded-md"
-              onChange={(e) => setName(e.target.value)}
               placeholder="May I know you?"
               required
               autoFocus
@@ -116,9 +127,7 @@ const About = () => {
             <input
               type="text"
               name="contact"
-              value={contact}
               className="py-2 px-4 focus:outline focus:outline-[#EB455F] rounded-md"
-              onChange={(e) => setContact(e.target.value)}
               placeholder="optional"
             />
           </div>
@@ -128,8 +137,6 @@ const About = () => {
               name="message"
               maxLength={500}
               id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
               required
               rows={10}
               cols={50}
@@ -140,7 +147,6 @@ const About = () => {
           <button
             type="submit"
             className=" px-10 py-2 mx-4 border border-[#EB455F] text-2xl hover:bg-[#EB455F] font-semibold hover:text-white justify-self-end"
-            onClick={() => sendMessage()}
           >
             Send
           </button>
