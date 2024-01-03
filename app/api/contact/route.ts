@@ -1,13 +1,11 @@
 import { Json } from "./../../../db_types";
-// Envoi des informations de tout utilisateur à la base de données ici
 import supabase from "@/supabase";
 import type { NextApiRequest, NextApiResponse } from "next";
 
-export const POST = async (req: NextApiRequest) => {
+export const POST = async (req: any) => {
+  // const body = await req.body;
   const body = await req.json();
-
-  // console.log(`Received message: ${JSON.stringify(body)}`);
-
+  //console.log(`body: ${JSON.stringify(body)}`);
   try {
     const { error } = await supabase.from("messages").insert(body);
 

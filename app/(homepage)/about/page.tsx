@@ -35,7 +35,7 @@ const About = () => {
       });
 
       if (response.ok) {
-        //console.log("success");
+        console.log(`response: ${response}`);
         succces();
         router.push("/about");
       } else {
