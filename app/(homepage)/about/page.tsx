@@ -5,8 +5,15 @@ import Lottie from "lottie-react";
 import { TypeAnimation } from "react-type-animation";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const About = () => {
+  const succces = () =>
+    toast.success("Message sent!", { position: "bottom-left" });
+  const error = () =>
+    toast.error("Message failed to send!", { position: "bottom-left" });
+
   const router = useRouter();
   const [submitting, setSubmitting] = useState(false);
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -29,8 +36,10 @@ const About = () => {
 
       if (response.ok) {
         //console.log("success");
-        router.push("/");
+        succces();
+        router.push("/about");
       } else {
+        error();
         console.log("error " + response.status);
       }
     } catch (err) {
@@ -106,6 +115,7 @@ const About = () => {
         </div>
       </div>
       <div className="container mx-auto text-xl my-12">
+        <ToastContainer />
         <form
           onSubmit={handleSubmit}
           className="grid justify-items-start gap-y-6"
