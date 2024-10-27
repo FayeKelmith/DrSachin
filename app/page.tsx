@@ -1,15 +1,18 @@
-"use client";
 import LandingHero from "./ui/components/LandingHero";
 import Quote from "./ui/components/Quote";
+import AboutMe from "./ui/components/AboutMe";
 export default function Home() {
   return (
-    <section className=" mx-auto">
-      <div>
+    <>
+      <section>
         <LandingHero />
-      </div>
-      <div className="py-12 bg-grey dark:bg-[#232323]">
+      </section>
+      <section className="">
         <Quote />
-      </div>
-    </section>
+      </section>
+      <section className="">
+        <AboutMe />
+      </section>
+    </>
   );
 }

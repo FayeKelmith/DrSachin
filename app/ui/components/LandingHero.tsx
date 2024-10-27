@@ -8,10 +8,10 @@ const LandingHero = () => {
       <div className="flex md:flex-row flex-col py-20 px-8 items-center md:container mx-auto">
         <div className="w-full my-10 ">
           <div className="">
-            <p className="text-5xl h-20 w-20 text-[#EB455F] font-semibold">
+            <div className="text-5xl h-20 w-20 text-[#EB455F] font-semibold">
               Hola!
               <Lottie animationData={animationData} loop={true} />
-            </p>
+            </div>
           </div>
           <h1 className="text-4xl my-8">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis,
@@ -32,6 +32,7 @@ const LandingHero = () => {
           <Image
             src="/images/hero-image.png"
             alt="Hero image"
+            priority={true}
             width={640}
             height={768}
           />
